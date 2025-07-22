@@ -368,8 +368,8 @@ button.cta-button:hover {
     color: #555;
 }
 
-.form-group input[type="text"],
-.form-group input[type="email"],
+.form-group input type="text"],
+.form-group input type="email"],
 .form-group textarea {
     width: 100%; /* Ocupa el 100% del ancho del contenedor */
     padding: 12px;
@@ -380,8 +380,8 @@ button.cta-button:hover {
     transition: border-color 0.3s ease;
 }
 
-.form-group input[type="text"]:focus,
-.form-group input[type="email"]:focus,
+.form-group input type="text"]:focus,
+.form-group input type="email"]:focus,
 .form-group textarea:focus {
     border-color: #007bff; /* Borde azul al enfocar */
     outline: none; /* Elimina el contorno por defecto del navegador */
@@ -427,10 +427,9 @@ button.cta-button:hover {
 .carousel-section {
     position: relative; /* Para posicionar los botones y puntos */
     max-width: 1200px; /* Ancho máximo del carrusel */
-    margin: 0 auto; /* Centra el carrusel */
+    margin: 0 auto 40px auto; /* Centra el carrusel y añade margen inferior */
     overflow: hidden; /* Oculta las partes de las imágenes que se salen del contenedor */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px; /* Espacio debajo del carrusel */
 }
 
 .carousel-container {
@@ -474,6 +473,7 @@ button.cta-button:hover {
     background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
     color: white;
     text-align: center;
+    z-index: 2; /* Asegura que esté por encima de los puntos */
 }
 
 .carousel-caption h2 {
@@ -491,6 +491,8 @@ button.cta-button:hover {
     background-color: #5cb85c; /* Un color de botón diferente para el carrusel */
     border: 1px solid #4cae4c;
     font-size: 1.1em;
+    position: relative; /* Para el z-index dentro del caption */
+    z-index: 3; /* Asegura que esté por encima de los puntos */
 }
 
 .carousel-caption .cta-button:hover {
@@ -512,7 +514,7 @@ button.cta-button:hover {
     border-radius: 0 3px 3px 0;
     user-select: none;
     background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
-    z-index: 1; /* Asegura que estén sobre las imágenes */
+    z-index: 4; /* Asegura que estén por encima de la caption y los puntos */
 }
 
 .next {
@@ -529,10 +531,10 @@ button.cta-button:hover {
     text-align: center;
     padding: 20px;
     position: absolute;
-    bottom: 10px; /* Ajusta la posición vertical de los puntos */
+    bottom: 0px; /* Los colocamos en la parte inferior del contenedor */
     width: 100%;
     left: 0;
-    z-index: 1;
+    z-index: 1; /* Los mantenemos con un z-index bajo */
 }
 
 .dot {
