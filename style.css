@@ -340,10 +340,66 @@ button.cta-button:hover {
     }
 
     /* Asegurar que el contenido no quede debajo del menú sticky cuando está abierto en móvil */
-    /* Modificación: En lugar de aplicar padding al body, empujamos el main content */
     body.menu-open main {
         padding-top: 300px; /* Ajusta este valor. Es la altura máxima esperada de tu menú desplegado */
     }
+}
+
+
+/* --- ESTILOS PARA EL FORMULARIO DE CONTACTO --- */
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block; /* Hace que la etiqueta ocupe su propia línea */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%; /* Ocupa el 100% del ancho del contenedor */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: #007bff; /* Borde azul al enfocar */
+    outline: none; /* Elimina el contorno por defecto del navegador */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite redimensionar solo verticalmente */
+}
+
+/* Estilo para el botón de enviar (usamos la clase cta-button ya existente) */
+.contact-form .cta-button {
+    width: 100%; /* El botón ocupa todo el ancho del formulario */
+    padding: 15px;
+    font-size: 1.1em;
+    background-color: #007bff; /* Color primario */
+}
+
+.contact-form .cta-button:hover {
+    background-color: #0056b3;
 }
 
 
