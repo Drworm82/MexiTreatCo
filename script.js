@@ -36,16 +36,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     menuToggle.addEventListener('click', function() {
         mainNav.classList.toggle('active'); // Alterna la clase 'active' en el nav
-        // Opcional: añade/remueve una clase al body para ajustar el padding si el menú fijo se superpone
+        // Alternar la clase 'menu-open' en el body
         document.body.classList.toggle('menu-open');
     });
 
-    // Opcional: Cerrar el menú si se hace clic en un enlace del menú móvil
+    // Cerrar el menú si se hace clic en un enlace del menú móvil
     mainNav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', function() {
             if (mainNav.classList.contains('active')) {
                 mainNav.classList.remove('active');
-                document.body.classList.remove('menu-open');
+                document.body.classList.remove('menu-open'); // Remover también la clase del body
             }
         });
     });
