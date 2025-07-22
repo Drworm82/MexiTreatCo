@@ -67,7 +67,7 @@ button.cta-button:hover {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
+    display: flex; /* Menú en línea por defecto para escritorio */
 }
 
 .main-nav ul li {
@@ -140,10 +140,6 @@ button.cta-button:hover {
 /* --- ESTILOS PARA LAS TARJETAS DE PRODUCTO (CSS Grid) --- */
 .product-grid {
     display: grid; /* Activa el modo Grid */
-    /* Crea columnas que se auto-ajustan:
-       - minmax(280px, 1fr): cada columna tendrá al menos 280px, pero crecerá para ocupar el espacio disponible.
-       - repeat(auto-fit, ...): crea tantas columnas como quepan.
-    */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px; /* Espacio entre las tarjetas */
     padding: 20px 0;
@@ -269,6 +265,77 @@ button.cta-button:hover {
 /* Estilo para el contenido cuando está abierto */
 .accordion-content.show {
     max-height: 300px; /* Una altura suficientemente grande para mostrar el contenido. Ajusta si tu contenido es muy largo */
+}
+
+
+/* --- ESTILOS PARA LA RESPONSIVIDAD DEL MENÚ (MÓVIL) --- */
+
+/* Por defecto, ocultar el botón de hamburguesa en escritorio */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Media Query para pantallas pequeñas (ej. móviles) */
+@media (max-width: 768px) {
+    #main-header .container {
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+        justify-content: space-between; /* Mantiene logo y toggle separados */
+    }
+
+    .logo {
+        flex-grow: 1; /* Permite que el logo ocupe el espacio restante */
+    }
+
+    /* Mostrar el botón de hamburguesa en móviles */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Ocultar la navegación principal por defecto en móviles */
+    .main-nav {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        order: 3; /* Asegura que el nav vaya debajo de logo y toggle */
+        max-height: 0; /* Oculta el menú */
+        overflow: hidden; /* Corta el contenido extra */
+        transition: max-height 0.3s ease-out; /* Transición para abrir/cerrar */
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Apila los enlaces verticalmente */
+        text-align: center;
+        background: #2b2b2b; /* Fondo para el menú desplegado */
+        padding: 10px 0;
+    }
+
+    .main-nav ul li {
+        margin: 0; /* Elimina el margen horizontal */
+        border-bottom: 1px solid #444; /* Separador entre enlaces */
+    }
+
+    .main-nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    .main-nav ul li a {
+        padding: 15px 0; /* Más padding para hacer los enlaces más tocables */
+        display: block; /* Para que el padding ocupe todo el ancho del li */
+    }
+
+    /* Clase para mostrar el menú móvil cuando está abierto */
+    .main-nav.active {
+        max-height: 300px; /* Suficiente altura para mostrar todos los enlaces. Ajusta si tienes muchos */
+    }
+
+    /* Asegurar que el contenido no quede debajo del menú sticky cuando está abierto en móvil */
+    body.menu-open {
+        padding-top: 120px; /* Ajusta según la altura de tu menú desplegado */
+    }
 }
 
 
