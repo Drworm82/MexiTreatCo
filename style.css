@@ -5,6 +5,8 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
+    /* Añadido para transiciones suaves al ajustar padding-top */
+    transition: padding-top 0.3s ease;
 }
 
 .container {
@@ -304,12 +306,17 @@ button.cta-button:hover {
         max-height: 0; /* Oculta el menú */
         overflow: hidden; /* Corta el contenido extra */
         transition: max-height 0.3s ease-out; /* Transición para abrir/cerrar */
+        background: #2b2b2b; /* Fondo para el menú desplegado */
+        position: absolute; /* Para que no afecte el flujo de la página */
+        top: 60px; /* Ajusta según la altura de tu header normal (10px padding superior + 10px padding inferior + altura del contenido interno del header) */
+        left: 0;
+        z-index: 999; /* Asegura que esté sobre otros elementos */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     .main-nav ul {
         flex-direction: column; /* Apila los enlaces verticalmente */
         text-align: center;
-        background: #2b2b2b; /* Fondo para el menú desplegado */
         padding: 10px 0;
     }
 
@@ -333,8 +340,9 @@ button.cta-button:hover {
     }
 
     /* Asegurar que el contenido no quede debajo del menú sticky cuando está abierto en móvil */
-    body.menu-open {
-        padding-top: 120px; /* Ajusta según la altura de tu menú desplegado */
+    /* Modificación: En lugar de aplicar padding al body, empujamos el main content */
+    body.menu-open main {
+        padding-top: 300px; /* Ajusta este valor. Es la altura máxima esperada de tu menú desplegado */
     }
 }
 
