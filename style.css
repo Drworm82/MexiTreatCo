@@ -5,7 +5,6 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
-    /* Añadido para transiciones suaves al ajustar padding-top */
     transition: padding-top 0.3s ease;
 }
 
@@ -13,7 +12,7 @@ body {
     width: 80%;
     max-width: 1100px;
     margin: auto;
-    overflow: hidden; /* Para limpiar floats, si los usamos */
+    overflow: hidden;
 }
 
 a {
@@ -25,18 +24,23 @@ a:hover {
     text-decoration: underline;
 }
 
-button.cta-button {
+/* Estilos para ambos, botones y enlaces con clase de botón */
+button.cta-button, a.cta-button {
     background-color: #007bff;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: pointer; /* Importante para indicar que es clickeable */
     font-size: 1em;
     transition: background-color 0.3s ease;
+    /* Específicos para enlaces que actúan como botones */
+    display: inline-block; /* Para que el padding y tamaño funcionen */
+    text-decoration: none; /* Para quitar el subrayado por defecto */
+    text-align: center; /* Para centrar el texto si el botón es más ancho */
 }
 
-button.cta-button:hover {
+button.cta-button:hover, a.cta-button:hover {
     background-color: #0056b3;
 }
 
@@ -45,8 +49,9 @@ button.cta-button:hover {
     background: #333;
     color: #fff;
     padding: 10px 0;
-    transition: all 0.3s ease; /* Para una transición suave al hacerse sticky */
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    transition: all 0.3s ease;
+    z-index: 1000;
+    position: relative; /* Asegura que el z-index funcione correctamente */
 }
 
 #main-header .container {
@@ -69,7 +74,7 @@ button.cta-button:hover {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Menú en línea por defecto para escritorio */
+    display: flex;
 }
 
 .main-nav ul li {
@@ -91,44 +96,29 @@ button.cta-button:hover {
 
 /* Estilos para el encabezado cuando es "sticky" */
 #main-header.sticky {
-    position: fixed; /* Lo fija en la pantalla */
-    top: 0; /* Lo coloca en la parte superior */
-    width: 100%; /* Asegura que ocupe todo el ancho */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Una pequeña sombra para que destaque */
-    background: #222; /* Un fondo ligeramente diferente cuando está fijo */
-    padding: 10px 0; /* Ajustamos el padding si es necesario */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    background: #222;
+    padding: 10px 0;
 }
-
 
 /* Estilos de las Secciones de Contenido */
-/* Nota: La hero-section ha sido reemplazada por carousel-section */
-.hero-section { /* Mantenemos por si acaso, pero no debería usarse */
-    background: #5cb85c;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .content-section {
     padding: 60px 20px;
-    margin-bottom: 20px; /* Espacio entre secciones */
+    margin-bottom: 20px;
     background: #fff;
     border-bottom: 1px solid #ddd;
-    /* Añadido para Scroll Reveal */
-    opacity: 0; /* Inicialmente oculto */
-    transform: translateY(50px); /* Ligeramente desplazado hacia abajo */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .content-section:last-child {
     border-bottom: none;
 }
 
-/* Estado de la sección cuando está visible (revelada) */
 .content-section.revealed {
     opacity: 1;
     transform: translateY(0);
@@ -142,9 +132,9 @@ button.cta-button:hover {
 
 /* --- ESTILOS PARA LAS TARJETAS DE PRODUCTO (CSS Grid) --- */
 .product-grid {
-    display: grid; /* Activa el modo Grid */
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px; /* Espacio entre las tarjetas */
+    gap: 30px;
     padding: 20px 0;
 }
 
@@ -152,34 +142,34 @@ button.cta-button:hover {
     background-color: #fff;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    overflow: hidden; /* Asegura que la imagen no sobresalga */
+    overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
-    padding-bottom: 20px; /* Espacio al final de la tarjeta */
-    display: flex; /* Usamos flexbox para el contenido interno de la tarjeta */
-    flex-direction: column; /* Apila el contenido verticalmente */
-    justify-content: space-between; /* Empuja el botón hacia abajo si el contenido es variable */
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .product-card .product-image {
     width: 100%;
-    height: 200px; /* Altura fija para la imagen */
-    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
-    display: block; /* Elimina espacio extra debajo de la imagen */
+    height: 200px;
+    object-fit: cover;
+    display: block;
     margin-bottom: 15px;
 }
 
 .product-card .product-title {
     font-size: 1.3em;
     color: #333;
-    margin: 10px 15px 5px 15px; /* Arriba derecha abajo izquierda */
+    margin: 10px 15px 5px 15px;
 }
 
 .product-card .product-description {
     font-size: 0.9em;
     color: #666;
     margin: 0 15px 15px 15px;
-    flex-grow: 1; /* Permite que la descripción ocupe el espacio disponible */
+    flex-grow: 1;
 }
 
 .product-card .product-price {
@@ -189,8 +179,9 @@ button.cta-button:hover {
     margin-bottom: 20px;
 }
 
+/* Estilos para el botón de añadir al carrito/suscribirse (puede ser botón o enlace) */
 .product-card .add-to-cart-button {
-    background-color: #28a745; /* Color verde para el botón de compra */
+    background-color: #28a745;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -198,21 +189,26 @@ button.cta-button:hover {
     cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s ease;
-    margin: 0 15px; /* Margen para que no toque los bordes */
+    margin: 0 15px;
+    /* Específicos para enlaces que actúan como botones */
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    width: calc(100% - 30px); /* Para que ocupe el ancho menos los márgenes */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho */
 }
 
 .product-card .add-to-cart-button:hover {
     background-color: #218838;
 }
 
-
 /* --- ESTILOS PARA EL ACORDEÓN --- */
 .accordion-container {
-    max-width: 800px; /* Limita el ancho del acordeón para mejor lectura */
-    margin: 40px auto; /* Centra el acordeón y le da espacio */
+    max-width: 800px;
+    margin: 40px auto;
     border: 1px solid #ddd;
     border-radius: 8px;
-    overflow: hidden; /* Para que los bordes redondeados se apliquen a los ítems */
+    overflow: hidden;
 }
 
 .accordion-item {
@@ -220,7 +216,7 @@ button.cta-button:hover {
 }
 
 .accordion-item:last-child {
-    border-bottom: none; /* No queremos borde en el último ítem */
+    border-bottom: none;
 }
 
 .accordion-header {
@@ -235,8 +231,8 @@ button.cta-button:hover {
     transition: background-color 0.3s ease, color 0.3s ease;
     font-size: 1.1em;
     font-weight: bold;
-    display: flex; /* Para alinear un posible icono de flecha */
-    justify-content: space-between; /* Para empujar el icono a la derecha */
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -244,36 +240,30 @@ button.cta-button:hover {
     background-color: #e2e2e2;
 }
 
-/* Estilo para el encabezado cuando está activo (abierto) */
 .accordion-header.active {
     background-color: #007bff;
     color: white;
 }
 
-/* Contenido de la respuesta (inicialmente oculto) */
 .accordion-content {
     background-color: white;
     padding: 0 25px;
-    max-height: 0; /* Clave para ocultar y animar el colapso */
-    overflow: hidden; /* Oculta el contenido desbordado */
-    transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* Transición suave */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
 }
 
 .accordion-content p {
-    padding-bottom: 15px; /* Espacio debajo del párrafo dentro del contenido */
-    margin: 0; /* Elimina el margen por defecto del párrafo */
-    padding-top: 15px; /* Espacio arriba del párrafo dentro del contenido */
+    padding-bottom: 15px;
+    margin: 0;
+    padding-top: 15px;
 }
 
-/* Estilo para el contenido cuando está abierto */
 .accordion-content.show {
-    max-height: 300px; /* Una altura suficientemente grande para mostrar el contenido. Ajusta si tu contenido es muy largo */
+    max-height: 300px;
 }
-
 
 /* --- ESTILOS PARA LA RESPONSIVIDAD DEL MENÚ (MÓVIL) --- */
-
-/* Por defecto, ocultar el botón de hamburguesa en escritorio */
 .menu-toggle {
     display: none;
     background: none;
@@ -284,46 +274,43 @@ button.cta-button:hover {
     padding: 5px;
 }
 
-/* Media Query para pantallas pequeñas (ej. móviles) */
 @media (max-width: 768px) {
     #main-header .container {
-        flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
-        justify-content: space-between; /* Mantiene logo y toggle separados */
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     .logo {
-        flex-grow: 1; /* Permite que el logo ocupe el espacio restante */
+        flex-grow: 1;
     }
 
-    /* Mostrar el botón de hamburguesa en móviles */
     .menu-toggle {
         display: block;
     }
 
-    /* Ocultar la navegación principal por defecto en móviles */
     .main-nav {
-        width: 100%; /* Ocupa todo el ancho disponible */
-        order: 3; /* Asegura que el nav vaya debajo de logo y toggle */
-        max-height: 0; /* Oculta el menú */
-        overflow: hidden; /* Corta el contenido extra */
-        transition: max-height 0.3s ease-out; /* Transición para abrir/cerrar */
-        background: #2b2b2b; /* Fondo para el menú desplegado */
-        position: absolute; /* Para que no afecte el flujo de la página */
-        top: 60px; /* Ajusta según la altura de tu header normal (10px padding superior + 10px padding inferior + altura del contenido interno del header) */
+        width: 100%;
+        order: 3;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        background: #2b2b2b;
+        position: absolute;
+        top: 60px;
         left: 0;
-        z-index: 999; /* Asegura que esté sobre otros elementos */
+        z-index: 999;
         box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     .main-nav ul {
-        flex-direction: column; /* Apila los enlaces verticalmente */
+        flex-direction: column;
         text-align: center;
         padding: 10px 0;
     }
 
     .main-nav ul li {
-        margin: 0; /* Elimina el margen horizontal */
-        border-bottom: 1px solid #444; /* Separador entre enlaces */
+        margin: 0;
+        border-bottom: 1px solid #444;
     }
 
     .main-nav ul li:last-child {
@@ -331,21 +318,18 @@ button.cta-button:hover {
     }
 
     .main-nav ul li a {
-        padding: 15px 0; /* Más padding para hacer los enlaces más tocables */
-        display: block; /* Para que el padding ocupe todo el ancho del li */
+        padding: 15px 0;
+        display: block;
     }
 
-    /* Clase para mostrar el menú móvil cuando está abierto */
     .main-nav.active {
-        max-height: 300px; /* Suficiente altura para mostrar todos los enlaces. Ajusta si tienes muchos */
+        max-height: 300px;
     }
 
-    /* Asegurar que el contenido no quede debajo del menú sticky cuando está abierto en móvil */
     body.menu-open main {
-        padding-top: 300px; /* Ajusta este valor. Es la altura máxima esperada de tu menú desplegado */
+        padding-top: 300px;
     }
 }
-
 
 /* --- ESTILOS PARA EL FORMULARIO DE CONTACTO --- */
 .contact-form {
@@ -362,124 +346,119 @@ button.cta-button:hover {
 }
 
 .form-group label {
-    display: block; /* Hace que la etiqueta ocupe su propia línea */
+    display: block;
     margin-bottom: 8px;
     font-weight: bold;
     color: #555;
 }
 
-.form-group input type="text"],
-.form-group input type="email"],
+.form-group input[type="text"],
+.form-group input[type="email"],
 .form-group textarea {
-    width: 100%; /* Ocupa el 100% del ancho del contenedor */
+    width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+    box-sizing: border-box;
     font-size: 1em;
     transition: border-color 0.3s ease;
 }
 
-.form-group input type="text"]:focus,
-.form-group input type="email"]:focus,
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
 .form-group textarea:focus {
-    border-color: #007bff; /* Borde azul al enfocar */
-    outline: none; /* Elimina el contorno por defecto del navegador */
+    border-color: #007bff;
+    outline: none;
 }
 
 .form-group textarea {
-    resize: vertical; /* Permite redimensionar solo verticalmente */
+    resize: vertical;
 }
 
-/* Estilo para el botón de enviar (usamos la clase cta-button ya existente) */
 .contact-form .cta-button {
-    width: 100%; /* El botón ocupa todo el ancho del formulario */
+    width: 100%;
     padding: 15px;
     font-size: 1.1em;
-    background-color: #007bff; /* Color primario */
+    background-color: #007bff;
 }
 
 .contact-form .cta-button:hover {
     background-color: #0056b3;
 }
 
-
 /* --- ESTILOS PARA SCROLL REVEAL --- */
-
-/* Aplica a todas las secciones de contenido */
-/* La sección de inicio (hero) ha sido reemplazada por carousel-section y no necesita esto */
 .content-section {
-    /* Propiedades iniciales antes de ser revelado */
-    opacity: 0; /* Totalmente transparente */
-    transform: translateY(50px); /* Desplazado 50px hacia abajo */
-    /* Transición suave para la animación */
+    opacity: 0;
+    transform: translateY(50px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Clase que se añade cuando la sección es visible en el viewport */
 .content-section.revealed {
-    opacity: 1; /* Completamente visible */
-    transform: translateY(0); /* Vuelve a su posición original */
+    opacity: 1;
+    transform: translateY(0);
 }
-
 
 /* --- ESTILOS PARA EL CARRUSEL --- */
 .carousel-section {
-    position: relative; /* Para posicionar los botones y puntos */
-    max-width: 1200px; /* Ancho máximo del carrusel */
-    margin: 0 auto 40px auto; /* Centra el carrusel y añade margen inferior */
-    overflow: hidden; /* Oculta las partes de las imágenes que se salen del contenedor */
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-container {
     position: relative;
     width: 100%;
-    height: 500px; /* Altura fija para el carrusel. Ajusta según tus imágenes. */
+    height: 500px;
     overflow: hidden;
+    /* Elimina el z-index de aquí, el caption y los botones deben tenerlo */
 }
 
 .carousel-slides {
-    display: flex; /* Para que las imágenes se coloquen una al lado de la otra */
+    display: flex;
     width: 100%;
     height: 100%;
-    transition: transform 0.8s ease-in-out; /* Transición para el efecto de deslizamiento */
+    transition: transform 0.8s ease-in-out;
 }
 
 .carousel-slide {
-    min-width: 100%; /* Cada slide ocupa el 100% del ancho del contenedor */
+    min-width: 100%;
     height: 100%;
-    position: relative; /* Para posicionar el caption */
-    display: flex; /* Para centrar la imagen y el caption */
+    position: relative;
+    display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f0f0f0; /* Color de fondo si la imagen no carga */
+    background-color: #f0f0f0;
 }
 
 .carousel-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que la imagen cubra todo el slide sin distorsionarse */
+    object-fit: cover;
     display: block;
 }
 
 /* Caption sobre la imagen */
 .carousel-caption {
     position: absolute;
-    bottom: 0; /* Posición inferior */
+    bottom: 0;
     left: 0;
     width: 100%;
     padding: 30px 20px;
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     text-align: center;
-    z-index: 2; /* Asegura que esté por encima de los puntos */
+    z-index: 20; /* Aumentado el z-index */
+    display: flex; /* Para flex-wrap de contenido */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
 }
 
 .carousel-caption h2 {
     margin: 0 0 10px 0;
     font-size: 2.5em;
-    color: white; /* Asegura que el título sea blanco */
+    color: white;
 }
 
 .carousel-caption p {
@@ -487,12 +466,14 @@ button.cta-button:hover {
     font-size: 1.2em;
 }
 
+/* El botón dentro del caption */
 .carousel-caption .cta-button {
-    background-color: #5cb85c; /* Un color de botón diferente para el carrusel */
+    background-color: #5cb85c;
     border: 1px solid #4cae4c;
     font-size: 1.1em;
-    position: relative; /* Para el z-index dentro del caption */
-    z-index: 3; /* Asegura que esté por encima de los puntos */
+    z-index: 25; /* Aumentado aún más el z-index para el botón */
+    position: relative; /* Asegura que el z-index funcione */
+    padding: 12px 25px; /* Ajuste un poco el padding para un mejor tamaño */
 }
 
 .carousel-caption .cta-button:hover {
@@ -509,12 +490,12 @@ button.cta-button:hover {
     margin-top: -22px;
     color: white;
     font-weight: bold;
-    font-size: 1.5em; /* Tamaño de las flechas */
+    font-size: 1.5em;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
-    z-index: 4; /* Asegura que estén por encima de la caption y los puntos */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 30; /* Aumentado el z-index para que estén por encima de todo */
 }
 
 .next {
@@ -531,10 +512,10 @@ button.cta-button:hover {
     text-align: center;
     padding: 20px;
     position: absolute;
-    bottom: 0px; /* Los colocamos en la parte inferior del contenedor */
+    bottom: 0px;
     width: 100%;
     left: 0;
-    z-index: 1; /* Los mantenemos con un z-index bajo */
+    z-index: 10; /* Mantenemos un z-index bajo para los puntos */
 }
 
 .dot {
@@ -552,11 +533,7 @@ button.cta-button:hover {
     background-color: #717171;
 }
 
-/* Transiciones de FADE (alternativa al deslizamiento) */
-/* Si usas la transición de deslizamiento en .carousel-slides, estas reglas "fade" son opcionales
-   pero útiles si solo quieres un efecto de aparición/desaparición.
-   Por ahora, el JS hará el deslizamiento por defecto, pero se pueden activar los fades comentando la transición del transform.
-*/
+/* Transiciones de FADE (si aún las estás usando en HTML) */
 .carousel-slide {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
@@ -573,7 +550,6 @@ button.cta-button:hover {
     from {opacity: .4}
     to {opacity: 1}
 }
-
 
 /* Footer */
 footer {
