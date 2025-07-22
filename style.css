@@ -1,0 +1,161 @@
+/* Estilos Globales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden; /* Para limpiar floats, si los usamos */
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button.cta-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos de la Cabecera/Menú */
+#main-header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    transition: all 0.3s ease; /* Para una transición suave al hacerse sticky */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+#main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 20px;
+}
+
+.main-nav ul li a {
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Estilos de las Secciones de Contenido */
+.hero-section {
+    background: #5cb85c;
+    color: white;
+    text-align: center;
+    padding: 100px 20px; /* Mucho padding para que haya scroll */
+    min-height: 500px; /* Para asegurar que el scroll sea visible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.content-section {
+    padding: 60px 20px;
+    margin-bottom: 20px; /* Espacio entre secciones */
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    min-height: 400px; /* Para asegurar que haya suficiente contenido para scroll */
+}
+
+.content-section:last-child {
+    border-bottom: none;
+}
+
+.content-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #007bff;
+}
+
+/* Estilos de los Placeholders */
+.product-grid-placeholder {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.placeholder-item {
+    background: #e9e9e9;
+    padding: 50px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #666;
+}
+
+.faq-placeholder p {
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
