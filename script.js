@@ -67,61 +67,81 @@ document.addEventListener('DOMContentLoaded', function() {
         revealObserver.observe(section);
     });
 
-    // --- Lógica para el Carrusel de Imágenes ---
-    let slideIndex = 1; // La diapositiva actual, empezando por 1
-    showSlides(slideIndex); // Muestra la primera diapositiva al cargar
+    // --- Lógica para el Carrusel de Imágenes (Revisada) ---
+    let slideIndex = 1;
+    const slides = document.getElementsByClassName("carousel-slide");
+    const dots = document.getElementsByClassName("dot");
+    const carouselSlidesContainer = document.querySelector('.carousel-slides');
 
-    // Función para avanzar/retroceder las diapositivas
-    window.plusSlides = function(n) {
-        showSlides(slideIndex += n);
+    // Función principal para mostrar diapositivas
+    function showSlides(n) {
+        // Asegurarse de que el índice esté dentro de los límites
+        if (n > slides.length) { slideIndex = 1; }
+        if (n < 1) { slideIndex = slides.length; }
+
+        // Ocultar todas las diapositivas
+        // Usamos display: none para las que no son activas
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        // Remover la clase 'active' de todos los puntos
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active");
+        }
+
+        // Mostrar la diapositiva actual
+        slides[slideIndex - 1].style.display = "block";
+
+        // Mover el contenedor de las diapositivas
+        // Esto crea el efecto de deslizamiento
+        // Comenta la línea de abajo si prefieres solo el efecto de "fade" (con la propiedad display:block/none)
+        carouselSlidesContainer.style.transform = `translateX(-${(slideIndex - 1) * 100}%)`;
+
+
+        // Marcar el punto indicador como activo
+        if (dots.length > 0) {
+            dots[slideIndex - 1].classList.add("active");
+        }
     }
 
-    // Función para ir a una diapositiva específica (usada por los puntos)
+    // Funciones para los botones de navegación (anterior/siguiente)
+    // Se agregan listeners de eventos directamente en JS para mayor robustez
+    // y se eliminan los onclick del HTML para estos botones.
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+
+    if (prevButton) {
+        prevButton.addEventListener('click', function() {
+            showSlides(slideIndex += -1);
+        });
+    }
+
+    if (nextButton) {
+        nextButton.addEventListener('click', function() {
+            showSlides(slideIndex += 1);
+        });
+    }
+
+    // Funciones para los puntos de navegación (se mantienen los onclick en HTML)
+    // Es posible que necesitemos ajustar el currentSlide para que use la misma lógica de showSlides
+    // window.currentSlide ya está definida como una función global.
     window.currentSlide = function(n) {
         showSlides(slideIndex = n);
     }
 
-    function showSlides(n) {
-        let i;
-        const slides = document.getElementsByClassName("carousel-slide");
-        const dots = document.getElementsByClassName("dot");
-        const carouselSlidesContainer = document.querySelector('.carousel-slides');
-
-        // Reinicia el índice si se pasa del final o del principio
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
-
-        // Oculta todas las diapositivas y quita la clase 'active' de los puntos
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none"; // Se ocultan para el fade effect
-            // Si usas transform para deslizamiento, es mejor usar la propiedad transform directamente en el contenedor
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-
-        // Muestra la diapositiva actual
-        slides[slideIndex-1].style.display = "block"; // Se muestra la diapositiva actual
-
-        // Ajusta la posición de las diapositivas para el efecto de deslizamiento
-        // Calcula el desplazamiento necesario para que la diapositiva actual esté visible
-        // `slideIndex - 1` es el índice base 0 de la diapositiva actual
-        // Multiplicamos por -100% para mover el contenedor de diapositivas
-        carouselSlidesContainer.style.transform = `translateX(-${(slideIndex - 1) * 100}%)`;
-
-        // Marca el punto indicador como activo
-        if (dots.length > 0) { // Asegura que haya puntos antes de intentar marcarlos
-            dots[slideIndex-1].className += " active";
-        }
-    }
+    // Mostrar la primera diapositiva al cargar
+    showSlides(slideIndex);
 
     /*
     // --- Desplazamiento automático de diapositivas (Opcional) ---
     // Descomenta este bloque si quieres que el carrusel avance automáticamente.
     let autoSlideInterval;
     function startAutoSlide() {
+        // Asegúrate de limpiar cualquier intervalo previo para evitar duplicados
+        stopAutoSlide();
         autoSlideInterval = setInterval(function() {
-            plusSlides(1); // Avanza una diapositiva cada 5 segundos
+            showSlides(slideIndex += 1); // Avanza una diapositiva cada 5 segundos
         }, 5000); // 5000 milisegundos = 5 segundos
     }
 
