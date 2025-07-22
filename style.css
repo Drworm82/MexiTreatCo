@@ -125,7 +125,7 @@ button.cta-button:hover {
     margin-bottom: 20px; /* Espacio entre secciones */
     background: #fff;
     border-bottom: 1px solid #ddd;
-    min-height: 400px; /* Para asegurar que haya suficiente contenido para scroll */
+    /*min-height: 400px;  Comentado, ya no es tan necesario para el acordeón */
 }
 
 .content-section:last-child {
@@ -138,7 +138,7 @@ button.cta-button:hover {
     color: #007bff;
 }
 
-/* Estilos de los Placeholders */
+/* Estilos de los Placeholders (mantengo para referencia si los necesitas para otros contenidos) */
 .product-grid-placeholder {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -154,14 +154,71 @@ button.cta-button:hover {
     color: #666;
 }
 
-.faq-placeholder p {
-    background: #f0f0f0;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    text-align: center;
-    color: #555;
+/* --- ESTILOS PARA EL ACORDEÓN --- */
+.accordion-container {
+    max-width: 800px; /* Limita el ancho del acordeón para mejor lectura */
+    margin: 40px auto; /* Centra el acordeón y le da espacio */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Para que los bordes redondeados se apliquen a los ítems */
 }
+
+.accordion-item {
+    border-bottom: 1px solid #eee;
+}
+
+.accordion-item:last-child {
+    border-bottom: none; /* No queremos borde en el último ítem */
+}
+
+.accordion-header {
+    background-color: #f8f8f8;
+    color: #333;
+    cursor: pointer;
+    padding: 18px 25px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: flex; /* Para alinear un posible icono de flecha */
+    justify-content: space-between; /* Para empujar el icono a la derecha */
+    align-items: center;
+}
+
+.accordion-header:hover {
+    background-color: #e2e2e2;
+}
+
+/* Estilo para el encabezado cuando está activo (abierto) */
+.accordion-header.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Contenido de la respuesta (inicialmente oculto) */
+.accordion-content {
+    background-color: white;
+    padding: 0 25px;
+    max-height: 0; /* Clave para ocultar y animar el colapso */
+    overflow: hidden; /* Oculta el contenido desbordado */
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* Transición suave */
+}
+
+.accordion-content p {
+    padding-bottom: 15px; /* Espacio debajo del párrafo dentro del contenido */
+    margin: 0; /* Elimina el margen por defecto del párrafo */
+    padding-top: 15px; /* Espacio arriba del párrafo dentro del contenido */
+}
+
+/* Estilo para el contenido cuando está abierto */
+.accordion-content.show {
+    max-height: 300px; /* Una altura suficientemente grande para mostrar el contenido. Ajusta si tu contenido es muy largo */
+    /* Si el contenido puede ser MUY variable y largo, se puede usar JavaScript para calcular la altura exacta en lugar de un max-height fijo, pero para empezar, max-height es más fácil. */
+}
+
 
 /* Footer */
 footer {
