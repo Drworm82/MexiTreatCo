@@ -448,7 +448,7 @@ button.cta-button:hover, a.cta-button:hover {
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
     text-align: center;
-    z-index: 100; /* Z-INDEX MUY ALTO para asegurar que esté por encima de los puntos */
+    z-index: 100; /* Asegurar que el caption esté por encima */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -470,8 +470,8 @@ button.cta-button:hover, a.cta-button:hover {
     background-color: #5cb85c;
     border: 1px solid #4cae4c;
     font-size: 1.1em;
-    z-index: 110; /* Z-INDEX AÚN MÁS ALTO para el botón dentro del caption */
-    position: relative; /* Es importante que tenga position para que z-index funcione */
+    z-index: 101; /* Z-INDEX AÚN MÁS ALTO que el caption mismo para el botón */
+    position: relative; /* Indispensable para que el z-index funcione en este contexto */
     padding: 12px 25px;
 }
 
@@ -494,7 +494,7 @@ button.cta-button:hover, a.cta-button:hover {
     border-radius: 0 3px 3px 0;
     user-select: none;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 120; /* Z-INDEX MUY ALTO para las flechas de navegación */
+    z-index: 102; /* Z-INDEX MUY ALTO para las flechas de navegación */
 }
 
 .next {
@@ -509,12 +509,14 @@ button.cta-button:hover, a.cta-button:hover {
 /* Indicadores de diapositiva (puntos) */
 .carousel-dots {
     text-align: center;
-    padding: 20px;
-    position: absolute;
-    bottom: 0px;
+    padding: 10px; /* Reducido el padding para que ocupen menos espacio vertical */
+    position: relative; /* CAMBIO CLAVE: Posición relativa para que no se superponga */
+    bottom: -40px; /* Moverlos hacia abajo del carousel-caption */
     width: 100%;
     left: 0;
-    z-index: 90; /* Mantener los puntos con un z-index menor */
+    z-index: 50; /* Mantener un z-index bajo */
+    box-sizing: border-box; /* Asegurar que el padding no afecte el width */
+    margin-top: -50px; /* Ajuste para que se vea por debajo del caption */
 }
 
 .dot {
