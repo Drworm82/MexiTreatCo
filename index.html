@@ -28,11 +28,45 @@
     </header>
 
     <main>
-        <section id="inicio" class="hero-section">
-            <div class="container">
-                <h2>Bienvenido a MexiTreatCo</h2>
-                <p>Explora nuestros deliciosos productos de suscripción.</p>
-                <button class="cta-button">Ver Cajas</button>
+        <section id="inicio" class="carousel-section">
+            <div class="carousel-container">
+                <div class="carousel-slides">
+                    <div class="carousel-slide fade">
+                        <img src="https://via.placeholder.com/1200x500/8B0000/FFFFFF?text=Bienvenido+a+MexiTreatCo" alt="Bienvenido a MexiTreatCo">
+                        <div class="carousel-caption">
+                            <h2>¡Explora el sabor de México!</h2>
+                            <p>Dulces y botanas auténticas directo a tu puerta.</p>
+                            <button class="cta-button">Descubre Nuestras Cajas</button>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide fade">
+                        <img src="https://via.placeholder.com/1200x500/006400/FFFFFF?text=Cajas+personalizadas" alt="Cajas personalizadas">
+                        <div class="carousel-caption">
+                            <h2>Cajas Curadas con Amor</h2>
+                            <p>Cada mes, una nueva sorpresa llena de delicias.</p>
+                            <button class="cta-button">Ver Planes de Suscripción</button>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide fade">
+                        <img src="https://via.placeholder.com/1200x500/4169E1/FFFFFF?text=Frescura+y+Tradicion" alt="Frescura y Tradición">
+                        <div class="carousel-caption">
+                            <h2>Frescura y Tradición</h2>
+                            <p>Directo de productores locales mexicanos.</p>
+                            <button class="cta-button">Conoce Nuestra Historia</button>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="prev" aria-label="Anterior">&#10094;</a>
+                <a class="next" aria-label="Siguiente">&#10095;</a>
+
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="currentSlide(1)" aria-label="Ir a diapositiva 1"></span>
+                    <span class="dot" onclick="currentSlide(2)" aria-label="Ir a diapositiva 2"></span>
+                    <span class="dot" onclick="currentSlide(3)" aria-label="Ir a diapositiva 3"></span>
+                </div>
             </div>
         </section>
 
@@ -95,11 +129,13 @@
                         </div>
                     </div>
 
-                    <button class="accordion-header">
-                        ¿Puedo cancelar mi suscripción en cualquier momento?
-                    </button>
-                    <div class="accordion-content">
-                        <p>Sí, puedes cancelar tu suscripción en cualquier momento desde tu cuenta de usuario. No hay compromisos a largo plazo, aunque esperamos que te quedes con nosotros por mucho tiempo.</p>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            ¿Puedo cancelar mi suscripción en cualquier momento?
+                        </button>
+                        <div class="accordion-content">
+                            <p>Sí, puedes cancelar tu suscripción en cualquier momento desde tu cuenta de usuario. No hay compromisos a largo plazo, aunque esperamos que te quedes con nosotros por mucho tiempo.</p>
+                        </div>
                     </div>
 
                     <div class="accordion-item">
