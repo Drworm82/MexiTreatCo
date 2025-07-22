@@ -87,6 +87,17 @@ button.cta-button:hover {
     text-decoration: none;
 }
 
+/* Estilos para el encabezado cuando es "sticky" */
+#main-header.sticky {
+    position: fixed; /* Lo fija en la pantalla */
+    top: 0; /* Lo coloca en la parte superior */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Una pequeña sombra para que destaque */
+    background: #222; /* Un fondo ligeramente diferente cuando está fijo */
+    padding: 10px 0; /* Ajustamos el padding si es necesario */
+}
+
+
 /* Estilos de las Secciones de Contenido */
 .hero-section {
     background: #5cb85c;
