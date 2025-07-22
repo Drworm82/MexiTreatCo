@@ -412,7 +412,6 @@ button.cta-button:hover, a.cta-button:hover {
     width: 100%;
     height: 500px;
     overflow: hidden;
-    /* Elimina el z-index de aquí, el caption y los botones deben tenerlo */
 }
 
 .carousel-slides {
@@ -449,10 +448,10 @@ button.cta-button:hover, a.cta-button:hover {
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
     text-align: center;
-    z-index: 20; /* Aumentado el z-index */
-    display: flex; /* Para flex-wrap de contenido */
-    flex-direction: column; /* Apila los elementos verticalmente */
-    align-items: center; /* Centra el contenido horizontalmente */
+    z-index: 100; /* Z-INDEX MUY ALTO para asegurar que esté por encima de los puntos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .carousel-caption h2 {
@@ -471,9 +470,9 @@ button.cta-button:hover, a.cta-button:hover {
     background-color: #5cb85c;
     border: 1px solid #4cae4c;
     font-size: 1.1em;
-    z-index: 25; /* Aumentado aún más el z-index para el botón */
-    position: relative; /* Asegura que el z-index funcione */
-    padding: 12px 25px; /* Ajuste un poco el padding para un mejor tamaño */
+    z-index: 110; /* Z-INDEX AÚN MÁS ALTO para el botón dentro del caption */
+    position: relative; /* Es importante que tenga position para que z-index funcione */
+    padding: 12px 25px;
 }
 
 .carousel-caption .cta-button:hover {
@@ -495,7 +494,7 @@ button.cta-button:hover, a.cta-button:hover {
     border-radius: 0 3px 3px 0;
     user-select: none;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 30; /* Aumentado el z-index para que estén por encima de todo */
+    z-index: 120; /* Z-INDEX MUY ALTO para las flechas de navegación */
 }
 
 .next {
@@ -515,7 +514,7 @@ button.cta-button:hover, a.cta-button:hover {
     bottom: 0px;
     width: 100%;
     left: 0;
-    z-index: 10; /* Mantenemos un z-index bajo para los puntos */
+    z-index: 90; /* Mantener los puntos con un z-index menor */
 }
 
 .dot {
