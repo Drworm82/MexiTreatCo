@@ -127,10 +127,20 @@ button.cta-button:hover {
     margin-bottom: 20px; /* Espacio entre secciones */
     background: #fff;
     border-bottom: 1px solid #ddd;
+    /* Añadido para Scroll Reveal */
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(50px); /* Ligeramente desplazado hacia abajo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave */
 }
 
 .content-section:last-child {
     border-bottom: none;
+}
+
+/* Estado de la sección cuando está visible (revelada) */
+.content-section.revealed {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .content-section h2 {
@@ -400,6 +410,25 @@ button.cta-button:hover {
 
 .contact-form .cta-button:hover {
     background-color: #0056b3;
+}
+
+
+/* --- ESTILOS PARA SCROLL REVEAL --- */
+
+/* Aplica a todas las secciones de contenido */
+/* La sección de inicio (hero) no necesita esto porque siempre es visible al cargar */
+.content-section {
+    /* Propiedades iniciales antes de ser revelado */
+    opacity: 0; /* Totalmente transparente */
+    transform: translateY(50px); /* Desplazado 50px hacia abajo */
+    /* Transición suave para la animación */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Clase que se añade cuando la sección es visible en el viewport */
+.content-section.revealed {
+    opacity: 1; /* Completamente visible */
+    transform: translateY(0); /* Vuelve a su posición original */
 }
 
 
