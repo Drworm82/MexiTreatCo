@@ -1,12 +1,12 @@
 /* Estilos Globales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif; /* Nueva fuente para el cuerpo */
     margin: 0;
-    line-height: 1.6; /* Un buen line-height para legibilidad */
+    line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
     transition: padding-top 0.3s ease;
-    font-size: 16px; /* Establecemos un tamaño base explícito para el body */
+    font-size: 17px; /* Aumenta el tamaño de fuente base para mayor legibilidad */
 }
 
 .container {
@@ -34,7 +34,7 @@ button.cta-button, a.cta-button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em; /* Relativo al tamaño del body (16px) */
+    font-size: 1em; /* Relativo al tamaño del body */
     transition: background-color 0.3s ease;
     display: inline-block;
     text-decoration: none;
@@ -63,7 +63,9 @@ button.cta-button:hover, a.cta-button:hover {
 
 .logo {
     margin: 0;
-    font-size: 1.8em; /* 1.8 veces el tamaño del body */
+    font-size: 2em; /* Tamaño de logo ligeramente más grande */
+    font-family: 'Montserrat', sans-serif; /* Fuente para el logo */
+    font-weight: 700; /* Negrita para el logo */
 }
 
 .logo a {
@@ -84,10 +86,11 @@ button.cta-button:hover, a.cta-button:hover {
 
 .main-nav ul li a {
     color: #fff;
-    font-weight: bold;
+    font-weight: 600; /* Seminegrita para los elementos del menú */
     text-transform: uppercase;
     padding: 5px 0;
     transition: color 0.3s ease;
+    font-size: 0.95em; /* Tamaño del menú ajustado */
 }
 
 .main-nav ul li a:hover {
@@ -126,12 +129,14 @@ button.cta-button:hover, a.cta-button:hover {
 }
 
 .content-section h2 {
+    font-family: 'Montserrat', sans-serif; /* Fuente para títulos de sección */
+    font-weight: 700; /* Negrita para títulos */
     text-align: center;
     margin-bottom: 40px;
-    margin-top: 0; /* Asegura que no haya margen superior excesivo */
-    padding-top: 20px; /* Para que el texto no se vea cortado si hay un sticky header */
+    margin-top: 0;
+    padding-top: 20px;
     color: #007bff;
-    font-size: 2.5em; /* Buen tamaño para títulos de sección */
+    font-size: 2.8em; /* Títulos de sección más grandes y prominentes */
 }
 
 /* --- ESTILOS PARA LAS TARJETAS DE PRODUCTO (CSS Grid) --- */
@@ -164,23 +169,25 @@ button.cta-button:hover, a.cta-button:hover {
 }
 
 .product-card .product-title {
-    font-size: 1.3em; /* Un poco más grande que el texto normal */
-    line-height: 1.3; /* Ajuste: Mejorar el espaciado entre líneas del título */
+    font-family: 'Montserrat', sans-serif; /* Fuente para títulos de producto */
+    font-weight: 600; /* Seminegrita */
+    font-size: 1.4em; /* Tamaño de título de producto ajustado */
+    line-height: 1.3;
     color: #333;
     margin: 10px 15px 5px 15px;
 }
 
 .product-card .product-description {
-    font-size: 0.95em; /* Ajuste: Tamaño de fuente muy legible, ligeramente menor que el base */
-    line-height: 1.5; /* Ajuste: Espaciado para la legibilidad del bloque de texto */
+    font-size: 1em; /* El mismo tamaño que el body para máxima legibilidad */
+    line-height: 1.6; /* Mayor espaciado para texto denso */
     color: #666;
     margin: 0 15px 15px 15px;
     flex-grow: 1;
-    text-align: left; /* Para que el texto justificado no se vea tan raro */
+    text-align: left; /* Alineación izquierda para mejor lectura de bloques */
 }
 
 .product-card .product-price {
-    font-size: 1.2em;
+    font-size: 1.3em; /* Precio ligeramente más grande */
     color: #007bff;
     font-weight: bold;
     margin-bottom: 20px;
@@ -240,6 +247,7 @@ button.cta-button:hover, a.cta-button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Open Sans', sans-serif; /* Consistencia en el acordeón */
 }
 
 .accordion-header:hover {
@@ -464,12 +472,15 @@ button.cta-button:hover, a.cta-button:hover {
 }
 
 .carousel-caption h2 {
+    font-family: 'Montserrat', sans-serif; /* Fuente para título del carrusel */
+    font-weight: 700;
     margin: 0 0 10px 0;
     font-size: 2.5em;
     color: white;
 }
 
 .carousel-caption p {
+    font-family: 'Open Sans', sans-serif; /* Fuente para párrafo del carrusel */
     margin-bottom: 20px;
     font-size: 1.2em;
 }
@@ -563,6 +574,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px 0;
+    font-family: 'Open Sans', sans-serif; /* Consistencia en el footer */
 }
 
 /* --- NUEVOS ESTILOS PARA LA SECCIÓN PERSONALIZADA --- */
@@ -571,6 +583,7 @@ footer {
     margin-bottom: 30px;
     font-size: 1.1em;
     color: #555;
+    font-family: 'Open Sans', sans-serif; /* Consistencia en subtítulos */
 }
 
 #personaliza-tu-caja .warning-msg {
@@ -578,6 +591,7 @@ footer {
     font-weight: bold;
     text-align: center;
     margin-top: 15px;
+    font-family: 'Open Sans', sans-serif; /* Consistencia en mensajes de advertencia */
 }
 
 .custom-box-builder {
@@ -632,12 +646,15 @@ footer {
 }
 
 .product-item h4 {
+    font-family: 'Montserrat', sans-serif; /* Fuente para títulos de items de personalización */
+    font-weight: 600;
     font-size: 1.1em;
     margin: 0 0 5px 0;
     color: #333;
 }
 
 .product-item p {
+    font-family: 'Open Sans', sans-serif; /* Fuente para párrafos de items de personalización */
     font-size: 0.9em;
     color: #666;
     font-weight: bold;
@@ -669,9 +686,12 @@ footer {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: sticky;
     top: 80px;
+    font-family: 'Open Sans', sans-serif; /* Consistencia en el resumen del carrito */
 }
 
 .cart-summary h3 {
+    font-family: 'Montserrat', sans-serif; /* Fuente para el título del carrito */
+    font-weight: 700;
     text-align: center;
     color: #007bff;
     margin-top: 0;
