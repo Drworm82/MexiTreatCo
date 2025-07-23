@@ -31,13 +31,12 @@ button.cta-button, a.cta-button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    cursor: pointer; /* Importante para indicar que es clickeable */
+    cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s ease;
-    /* Específicos para enlaces que actúan como botones */
-    display: inline-block; /* Para que el padding y tamaño funcionen */
-    text-decoration: none; /* Para quitar el subrayado por defecto */
-    text-align: center; /* Para centrar el texto si el botón es más ancho */
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
 }
 
 button.cta-button:hover, a.cta-button:hover {
@@ -51,7 +50,7 @@ button.cta-button:hover, a.cta-button:hover {
     padding: 10px 0;
     transition: all 0.3s ease;
     z-index: 1000;
-    position: relative; /* Asegura que el z-index funcione correctamente */
+    position: relative;
 }
 
 #main-header .container {
@@ -190,12 +189,11 @@ button.cta-button:hover, a.cta-button:hover {
     font-size: 1em;
     transition: background-color 0.3s ease;
     margin: 0 15px;
-    /* Específicos para enlaces que actúan como botones */
     display: inline-block;
     text-decoration: none;
     text-align: center;
-    width: calc(100% - 30px); /* Para que ocupe el ancho menos los márgenes */
-    box-sizing: border-box; /* Incluye padding y borde en el ancho */
+    width: calc(100% - 30px);
+    box-sizing: border-box;
 }
 
 .product-card .add-to-cart-button:hover {
@@ -400,11 +398,12 @@ button.cta-button:hover, a.cta-button:hover {
 
 /* --- ESTILOS PARA EL CARRUSEL --- */
 .carousel-section {
-    position: relative;
+    position: relative; /* Mantener la sección padre como relativa */
     max-width: 1200px;
     margin: 0 auto 40px auto;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* padding-bottom: 40px; Este padding lo usaremos para los puntos */
 }
 
 .carousel-container {
@@ -506,18 +505,15 @@ button.cta-button:hover, a.cta-button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Indicadores de diapositiva (puntos) */
+/* Indicadores de diapositiva (puntos) - REUBICADOS FUERA DEL CAROUSEL-CONTAINER */
 .carousel-dots {
     text-align: center;
-    padding: 10px; /* Reducido el padding para que ocupen menos espacio vertical */
-    position: relative; /* CAMBIO CLAVE: Posición relativa para que no se superponga */
-    bottom: -40px; /* Moverlos hacia abajo del carousel-caption */
-    width: 100%;
-    left: 0;
-    z-index: 50; /* Mantener un z-index bajo */
-    box-sizing: border-box; /* Asegurar que el padding no afecte el width */
-    margin-top: -50px; /* Ajuste para que se vea por debajo del caption */
+    padding: 15px 0; /* Añadir padding vertical */
+    margin-top: -10px; /* Ajuste para que se vea más cerca del carrusel si es necesario */
+    background-color: #f0f0f0; /* Un color de fondo para que se vea */
+    border-top: 1px solid #e0e0e0;
 }
+
 
 .dot {
     cursor: pointer;
