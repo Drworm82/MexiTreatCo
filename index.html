@@ -4,246 +4,303 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MexiTreatCo - Dulces y Botanas Mexicanas</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/favicon.png"> </head>
 <body>
-
     <header id="main-header">
         <div class="container">
-            <h1 class="logo">MexiTreatCo</h1>
-            <button class="menu-toggle" aria-label="Abrir menú">
-                <i class="fas fa-bars</i>
-            </button>
+            <h1 class="logo"><a href="#">MexiTreatCo</a></h1>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#productos">Productos</a></li>
-                    <li><a href="#personaliza-tu-caja">Personaliza Tu Caja</a></li>
-                    <li><a href="#acerca-de">Acerca de</a></li>
-                    <li><a href="#faqs">FAQs</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#products">Productos</a></li>
+                    <li><a href="#customize-box">Personaliza tu Caja</a></li>
+                    <li><a href="#shipping-calculator-section">Calcula Envío</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contacto</a></li>
                 </ul>
             </nav>
+            <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
         </div>
     </header>
 
     <main>
-        <section id="inicio" class="carousel-section">
+        <section id="hero" class="hero-section content-section revealed">
             <div class="carousel-container">
                 <div class="carousel-slides">
-                    <div class="carousel-slide fade">
-                        <img src="img/alegria-620x400.jpg" alt="Dulces de Alegría Tradicionales">
-                        <div class="carousel-caption">
-                            <h2>¡Explora el sabor de México!</h2>
-                            <p>Dulces y botanas auténticas directo a tu puerta.</p>
-                            <a href="#productos" class="cta-button">Descubre Nuestras Cajas</a>
+                    <div class="carousel-slide">
+                        <img src="img/carousel1.jpg" alt="Dulces variados">
+                        <div class="hero-content">
+                            <h2>El Dulce Sabor de México a tu Puerta</h2>
+                            <p>Descubre la auténtica esencia de la tradición mexicana en cada bocado.</p>
+                            <a href="#products" class="cta-button">Ver Productos</a>
                         </div>
                     </div>
-
-                    <div class="carousel-slide fade">
-                        <img src="img/dulces-mexicanos-2.jpg" alt="Variedad de Dulces Mexicanos">
-                        <div class="carousel-caption">
-                            <h2>Cajas Curadas con Amor</h2>
-                            <p>Cada mes, una nueva sorpresa llena de delicias.</p>
-                            <a href="#productos" class="cta-button">Ver Planes de Suscripción</a>
+                    <div class="carousel-slide">
+                        <img src="img/carousel2.jpg" alt="Caja de dulces">
+                        <div class="hero-content">
+                            <h2>Personaliza tu Propia Aventura Dulce</h2>
+                            <p>Elige tus favoritos y crea la caja perfecta de MexiTreatCo.</p>
+                            <a href="#customize-box" class="cta-button">Armar mi Caja</a>
                         </div>
                     </div>
-
-                    <div class="carousel-slide fade">
-                        <img src="img/Pepitorias-.jpg.imgw.1280.1280.jpeg" alt="Pepitorias y Dulces Típicos">
-                        <div class="carousel-caption">
-                            <h2>Frescura y Tradición</h2>
-                            <p>Directo de productores locales mexicanos.</p>
-                            <a href="#acerca-de" class="cta-button">Conoce Nuestra Historia</a>
+                    <div class="carousel-slide">
+                        <img src="img/carousel3.jpg" alt="Celebración mexicana">
+                        <div class="hero-content">
+                            <h2>Regala Tradición, Regala Alegría</h2>
+                            <p>Sorprende a tus seres queridos con un pedacito de México.</p>
+                            <a href="#contact" class="cta-button">Contáctanos</a>
                         </div>
                     </div>
                 </div>
-
-                <a class="prev" aria-label="Anterior">&#10094;</a>
-                <a class="next" aria-label="Siguiente">&#10095;</a>
-            </div>
-
-            <div class="carousel-dots">
-                <span class="dot active" onclick="currentSlide(1)" aria-label="Ir a diapositiva 1"></span>
-                <span class="dot" onclick="currentSlide(2)" aria-label="Ir a diapositiva 2"></span>
-                <span class="dot" onclick="currentSlide(3)" aria-label="Ir a diapositiva 3"></span>
+                <button class="prev" aria-label="Anterior">&#10094;</button>
+                <button class="next" aria-label="Siguiente">&#10095;</button>
+                <div class="carousel-dots"></div>
             </div>
         </section>
 
-        <section id="productos" class="content-section">
+        <section id="about" class="content-section">
             <div class="container">
-                <h2>Nuestros Productos</h2>
+                <h2>Nuestra Historia y Pasión</h2>
+                <div class="about-content">
+                    <img src="img/about-us.jpg" alt="Historia de MexiTreatCo" class="about-image">
+                    <div class="about-text">
+                        <p>En MexiTreatCo, nacimos del amor por la riqueza cultural y gastronómica de México. Nuestro sueño es compartir la alegría y los sabores auténticos de nuestros dulces y botanas tradicionales con el mundo.</p>
+                        <p>Cada producto es seleccionado cuidadosamente, garantizando la frescura y la calidad que nos caracteriza. Creemos firmemente que cada mordisco es un viaje a nuestras raíces, un recordatorio de fiestas, colores y el calor de nuestra gente.</p>
+                        <p>Más allá de un simple dulce, ofrecemos una experiencia, un pedacito de nuestra cultura empacado con amor y listo para endulzar tu día, estés donde estés.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="content-section">
+            <div class="container">
+                <h2>Nuestros Productos Mexicanos</h2>
+                <div class="form-group country-filter-container">
+                    <label for="customerCountry">Selecciona tu País de Envío:</label>
+                    <select id="customerCountry">
+                        <option value="">(Selecciona para ver productos disponibles)</option>
+                        <option value="MX">México (Nacional)</option>
+                        <option value="US">Estados Unidos</option>
+                        <option value="CA">Canadá</option>
+                        <option value="DE">Alemania</option>
+                        <option value="JP">Japón</option>
+                        <option value="FR">Francia</option>
+                        <option value="GB">Reino Unido</option>
+                        </select>
+                    <p class="small-text-info">Los productos se ajustarán a las regulaciones de tu país.</p>
+                </div>
+
                 <div class="product-grid">
-                    <div class="product-card">
-                        <img src="img/alegria-620x400.jpg" alt="Caja Prehispánica" class="product-image">
-                        <h3 class="product-title">Caja Prehispánica – “Sabores tradicionales”</h3>
-                        <p class="product-description">
-                            **Contenido estimado:** 6 a 8 productos. Incluye: 2 alegrías grandes o 3 mini, 1 barra de amaranto con chocolate o miel, 1 bolsita de frutas deshidratadas con chile (mango, piña, tejocote), 1 chocolate con cacao artesanal, 1 porción de cacahuates con chile o semillas, 1 dulce regional (piloncillo, tamarindo tradicional, etc.). Sin bebida.
-                        </p>
-                        <p class="product-price">$29.99/mes</p>
-                        <a href="#contacto" class="add-to-cart-button">Suscribirse</a>
+                    <div class="product-card" data-product-id="de-la-rosa-mazapan">
+                        <img src="img/mazapan.jpg" alt="De La Rosa Mazapán" class="product-image">
+                        <div class="product-details">
+                            <h3 class="product-title">De La Rosa Mazapán</h3>
+                            <p class="product-description">El icónico dulce de cacahuate de Jalisco. Suave y delicioso.</p>
+                            <p class="product-price">$8.00 MXN</p>
+                            <button class="add-to-cart-button add-item-btn">Añadir a la Caja</button>
+                        </div>
                     </div>
 
-                    <div class="product-card">
-                        <img src="img/ates.jpg" alt="Caja Colonial" class="product-image">
-                        <h3 class="product-title">Caja Colonial – “Dulces de la Conquista”</h3>
-                        <p class="product-description">
-                            **Contenido estimado:** 8 a 10 productos. Incluye: 2 obleas con cajeta grandes, 2 borrachitos o jamoncillos variados, 2 cocadas pequeñas o 1 grande, 1 porción de dulce de leche o dulce cristalizado, 1 alfeñique o dulce artístico, 1 chocolate estilo convento (canela o vainilla). Sin bebida.
-                        </p>
-                        <p class="product-price">$34.99/mes</p>
-                        <a href="#contacto" class="add-to-cart-button">Suscribirse</a>
+                    <div class="product-card" data-product-id="pelon-pelo-rico">
+                        <img src="img/pelon-pelo-rico.jpg" alt="Pelon Pelo Rico" class="product-image">
+                        <div class="product-details">
+                            <h3 class="product-title">Pelon Pelo Rico</h3>
+                            <p class="product-description">Clásico dulce de tamarindo con chile que se exprime. Diversión y sabor.</p>
+                            <p class="product-price">$15.00 MXN</p>
+                            <button class="add-to-cart-button add-item-btn">Añadir a la Caja</button>
+                        </div>
                     </div>
 
-                    <div class="product-card">
-                        <img src="img/dulces-mexicanos-2.jpg" alt="Caja Moderna" class="product-image">
-                        <h3 class="product-title">Caja Moderna – “Nostalgia Mexicana”</h3>
-                        <p class="product-description">
-                            **Contenido estimado:** 10 a 12 productos. Incluye: 2 botanas (churritos, papitas, churrumais), 1 paquete de Rellerindos, 1 paquete de Pulparindos, 1 Lucas (polvo o gel), 1 paleta Rockaleta o Rebanadita, 2 gomitas (panditas, vaquitas, pelón), 1 paleta de tamarindo o mango con chile, 2 dulces sorpresa (picafresas o chicles legendarios). Sin bebida.
-                        </p>
-                        <p class="product-price">$39.99/mes</p>
-                        <a href="#contacto" class="add-to-cart-button">Suscribirse</a>
+                    <div class="product-card" data-product-id="pulparindo">
+                        <img src="img/pulparindo.jpg" alt="Pulparindo" class="product-image">
+                        <div class="product-details">
+                            <h3 class="product-title">Pulparindo</h3>
+                            <p class="product-description">Barrita de pulpa de tamarindo natural, acidita y salada. ¡Un clásico!</p>
+                            <p class="product-price">$10.00 MXN</p>
+                            <button class="add-to-cart-button add-item-btn">Añadir a la Caja</button>
+                        </div>
                     </div>
 
-                    <div class="product-card">
-                        <img src="img/maxresdefault.jpg" alt="Caja Sorpresa del Mes" class="product-image">
-                        <h3 class="product-title">Caja Sorpresa del Mes – “México Temático”</h3>
-                        <p class="product-description">
-                            **Contenido estimado:** 12 a 15 productos. Incluye: Selección temática (ej. Día de Muertos: calaveritas de azúcar, panecito, dulce de calabaza), 2 a 3 productos artesanales o raros, 1 producto “estrella” que varía cada mes, 1 coquita mini o bebida temática si aplica, Otros dulces y botanas (mezcla moderna, regional o de temporada).
-                        </p>
-                        <p class="product-price">$49.99/mes</p>
-                        <a href="#contacto" class="add-to-cart-button">Suscribirse</a>
+                    <div class="product-card" data-product-id="vero-paleta-vero-mango">
+                        <img src="img/vero-paleta-mango.jpg" alt="Vero Paleta Vero Mango" class="product-image">
+                        <div class="product-details">
+                            <h3 class="product-title">Vero Paleta Vero Mango</h3>
+                            <p class="product-description">Paleta de caramelo con sabor a mango y cubierta de chile. Dulce y picosito.</p>
+                            <p class="product-price">$12.00 MXN</p>
+                            <button class="add-to-cart-button add-item-btn">Añadir a la Caja</button>
+                        </div>
                     </div>
 
-                    <div class="product-card">
-                        <img src="img/dulces-tipicos-mexicanos.jpg" alt="Caja Personalizada" class="product-image">
-                        <h3 class="product-title">Caja Personalizada – “Tú Armas la Fiesta”</h3>
-                        <p class="product-description">
-                            **Contenido variable según presupuesto elegido por el usuario.** Selecciona tus dulces y botanas favoritos para crear la caja perfecta.
-                        </p>
-                        <p class="product-price">Desde $24.99</p>
-                        <a href="#personaliza-tu-caja" class="add-to-cart-button">¡Armar mi Caja!</a>
+                    <div class="product-card" data-product-id="bubulubu">
+                        <img src="img/bubulubu.jpg" alt="Bubulubu" class="product-image">
+                        <div class="product-details">
+                            <h3 class="product-title">Bubulubu</h3>
+                            <p class="product-description">Malvavisco con jalea de fresa cubierto de chocolate. ¡Un placer!</p>
+                            <p class="product-price">$12.00 MXN</p>
+                            <button class="add-to-cart-button add-item-btn">Añadir a la Caja</button>
+                        </div>
                     </div>
-                </div>
+
+                    <div class="product-card" data-product-id="lucas-lucas-muecas">
+                        <img src="img/lucas-muecas.jpg" alt="Lucas Lucas Muecas" class="product-image">
+                        <div class="product-details">
+                            <h3 class="product-title">Lucas Lucas Muecas</h3>
+                            <p class="product-description">Caramelo de tamarindo con polvo de chile. Diversión para tu boca.</p>
+                            <p class="product-price">$18.00 MXN</p>
+                            <button class="add-to-cart-button add-item-btn">Añadir a la Caja</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-id="canels-gomitas">
+                        <img src="img/canels-gomitas.jpg" alt="Canel's Gomitas" class="product-image">
+                        <div class="product-details">
+                            <h3 class="product-title">Canel's Gomitas</h3>
+                            <p class="product-description">Gomitas azucaradas de sabores frutales variados. ¡Un dulce placer!</p>
+                            <p class="product-price">$10.00 MXN</p>
+                            <button class="add-to-cart-button add-item-btn">Añadir a la Caja</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-id="don-pedro-cajeta">
+                        <img src="img/don-pedro-cajeta.jpg" alt="Don Pedro Cajeta" class="product-image">
+                        <div class="product-details">
+                            <h3 class="product-title">Don Pedro Cajeta</h3>
+                            <p class="product-description">Dulce tradicional de leche de cabra quemada. Cremoso y delicioso.</p>
+                            <p class="product-price">$30.00 MXN</p>
+                            <button class="add-to-cart-button add-item-btn">Añadir a la Caja</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product-id="la-vaquita-cajeta-envinada">
+                        <img src="img/la-vaquita-cajeta-envinada.jpg" alt="La Vaquita Cajeta Envinada" class="product-image">
+                        <div class="product-details">
+                            <h3 class="product-title">La Vaquita Cajeta Envinada</h3>
+                            <p class="product-description">Cajeta tradicional de leche de cabra con un toque de vino. Sabor único.</p>
+                            <p class="product-price">$35.00 MXN</p>
+                            <button class="add-to-cart-button add-item-btn">Añadir a la Caja</button>
+                        </div>
+                    </div>
+
+                    </div>
             </div>
         </section>
 
-        <section id="personaliza-tu-caja" class="content-section">
+        <section id="customize-box" class="content-section">
             <div class="container">
-                <h2>¡Arma Tu Propia Caja!</h2>
-                <p class="subtitle">Selecciona tus dulces y botanas favoritos. Mínimo de compra: <span id="min-compra">$24.99</span></p>
-
-                <div class="custom-box-builder">
-                    <div class="products-list">
-                        <div class="product-item" data-name="Alegría Grande" data-price="2.50" data-image="img/alegria-620x400.jpg">
-                            <img src="img/alegria-620x400.jpg" alt="Alegría Grande">
-                            <div class="item-info">
-                                <h4>Alegría Grande</h4>
-                                <p>$2.50</p>
-                                <button class="add-item-btn" data-id="alegria">Añadir</button>
-                            </div>
-                        </div>
-
-                        <div class="product-item" data-name="Barra Amaranto Chocolate" data-price="3.00" data-image="img/amaranto_1.jpg">
-                            <img src="img/amaranto_1.jpg" alt="Barra Amaranto Chocolate">
-                            <div class="item-info">
-                                <h4>Barra Amaranto Chocolate</h4>
-                                <p>$3.00</p>
-                                <button class="add-item-btn" data-id="amaranto-choc">Añadir</button>
-                            </div>
-                        </div>
-
-                        <div class="product-item" data-name="Frutas Deshidratadas c/Chile" data-price="4.00" data-image="img/frutas-chile.jpg">
-                            <img src="img/frutas-chile.jpg" alt="Frutas Deshidratadas con Chile">
-                            <div class="item-info">
-                                <h4>Frutas Deshidratadas c/Chile</h4>
-                                <p>$4.00</p>
-                                <button class="add-item-btn" data-id="frutas-chile">Añadir</button>
-                            </div>
-                        </div>
-
-                        <div class="product-item" data-name="Chocolate Cacao Artesanal" data-price="5.50" data-image="img/chocolate-cacao.jpg">
-                            <img src="img/chocolate-cacao.jpg" alt="Chocolate Cacao Artesanal">
-                            <div class="item-info">
-                                <h4>Chocolate Cacao Artesanal</h4>
-                                <p>$5.50</p>
-                                <button class="add-item-btn" data-id="choc-artesanal">Añadir</button>
-                            </div>
-                        </div>
-
-                        <div class="product-item" data-name="Cacahuates con Chile" data-price="2.00" data-image="img/cacahuates-chile.jpg">
-                            <img src="img/cacahuates-chile.jpg" alt="Cacahuates con Chile">
-                            <div class="item-info">
-                                <h4>Cacahuates con Chile</h4>
-                                <p>$2.00</p>
-                                <button class="add-item-btn" data-id="cacahuates">Añadir</button>
-                            </div>
-                        </div>
-
-                        </div>
-
+                <h2>Personaliza tu Propia MexiTreatCo</h2>
+                <p class="subtitle">Selecciona tus dulces favoritos para crear tu caja ideal (mínimo 2 items).</p>
+                <div class="box-customizer">
+                    <div class="item-selection">
+                        <p style="text-align: center; color: #666;">Añade tus dulces desde la sección "Nuestros Productos Mexicanos" (arriba).</p>
+                    </div>
                     <div class="cart-summary">
-                        <h3>Tu Caja Actual</h3>
+                        <h3>Tu Caja MexiTreatCo</h3>
                         <div id="cart-items">
-                            <p>Tu caja está vacía.</p>
+                            <p style="text-align: center; color: #888;">Tu caja está vacía.</p>
                         </div>
-                        <p class="total">Subtotal: <span id="cart-total">$0.00</span></p>
-                        <button id="checkout-btn" class="cta-button" disabled>Terminar y Solicitar Caja</button>
-                        <p id="min-purchase-msg" class="warning-msg">Necesitas alcanzar un mínimo de $24.99.</p>
+                        <p class="cart-total-text">Total: $<span id="cart-total">0.00</span> MXN</p>
+                        <button id="checkout-btn" class="cta-button" disabled>Finalizar Compra</button>
+                        <p class="small-text-info">Necesitas al menos 2 items para finalizar la compra.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="acerca-de" class="content-section">
+        <section id="shipping-calculator-section" class="content-section">
             <div class="container">
-                <h2>Acerca de Nosotros</h2>
-                <p>Somos una pequeña iniciativa dedicada a hacer el desarrollo web más accesible y divertido. Nos enfocamos en soluciones prácticas y eficientes.</p>
+                <h2>Calcula tu Costo de Envío</h2>
+                <p class="subtitle">Ingresa tu Código Postal o País para estimar el costo de envío de tu MexiTreatCo.</p>
+
+                <div class="shipping-calculator-form">
+                    <div class="form-group">
+                        <label for="shippingType">Tipo de Envío:</label>
+                        <select id="shippingType">
+                            <option value="national">Nacional (México)</option>
+                            <option value="international">Internacional</option>
+                        </select>
+                    </div>
+
+                    <div id="nationalShippingFields" class="shipping-fields">
+                        <div class="form-group">
+                            <label for="zipCode">Código Postal:</label>
+                            <input type="text" id="zipCode" placeholder="Ej: 03100" maxlength="5" pattern="[0-9]{5}">
+                            <small>Solo números (5 dígitos).</small>
+                        </div>
+                    </div>
+
+                    <div id="internationalShippingFields" class="shipping-fields" style="display: none;">
+                        <div class="form-group">
+                            <label for="countrySelect">País de Destino:</label>
+                            <select id="countrySelect">
+                                <option value="">Selecciona un país...</option>
+                                <option value="US">Estados Unidos</option>
+                                <option value="CA">Canadá</option>
+                                <option value="DE">Alemania</option>
+                                <option value="JP">Japón</option>
+                                <option value="FR">Francia</option>
+                                <option value="GB">Reino Unido</option>
+                                </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity">Cantidad de Cajas:</label>
+                        <input type="number" id="quantity" value="1" min="1" max="10" required>
+                    </div>
+                    <button class="cta-button" id="calculateShippingBtn">Calcular Envío</button>
+                    <p id="shippingCostResult"></p>
+                    <p class="small-text-info" id="shippingDisclaimer" style="display: none;">**Este costo es una estimación y NO incluye posibles impuestos o aranceles aduaneros en el país de destino, los cuales son responsabilidad del comprador.**</p>
+                </div>
             </div>
         </section>
 
-        <section id="faqs" class="content-section">
+
+        <section id="faq" class="content-section">
             <div class="container">
                 <h2>Preguntas Frecuentes</h2>
                 <div class="accordion-container">
                     <div class="accordion-item">
-                        <button class="accordion-header">
-                            ¿Cómo funciona el servicio de suscripción?
-                        </button>
+                        <button class="accordion-header">¿Qué métodos de pago aceptan?</button>
                         <div class="accordion-content">
-                            <p>Nuestro servicio de suscripción te envía una caja sorpresa llena de dulces y snacks mexicanos directamente a tu puerta cada mes. Puedes elegir el plan que mejor se adapte a tus gustos y presupuesto.</p>
+                            <p>Actualmente aceptamos pagos con tarjetas de crédito y débito (Visa, Mastercard, American Express) a través de nuestra pasarela de pago segura. También ofrecemos la opción de pago vía PayPal.</p>
                         </div>
                     </div>
-
                     <div class="accordion-item">
-                        <button class="accordion-header">
-                            ¿Puedo cancelar mi suscripción en cualquier momento?
-                        </button>
+                        <button class="accordion-header">¿Realizan envíos internacionales?</button>
                         <div class="accordion-content">
-                            <p>Sí, puedes cancelar tu suscripción en cualquier momento desde tu cuenta de usuario. No hay compromisos a largo plazo, aunque esperamos que te quedes con nosotros por mucho tiempo.</p>
+                            <p>¡Sí, enviamos a muchos países alrededor del mundo! Puedes verificar la disponibilidad de productos y calcular el costo de envío internacional en nuestras secciones de Productos y Calculador de Envío.</p>
                         </div>
                     </div>
-
                     <div class="accordion-item">
-                        <button class="accordion-header">
-                            ¿Qué tipo de productos incluyen las cajas?
-                        </button>
+                        <button class="accordion-header">¿Cuánto tiempo tarda en llegar mi pedido?</button>
                         <div class="accordion-content">
-                            <p>Cada caja es una sorpresa, pero siempre incluye una variedad de dulces tradicionales, botanas saladas y quizás alguna bebida o artículo especial de México. ¡Siempre buscamos lo mejor y más auténtico!</p>
+                            <p>El tiempo de entrega varía según el destino. Para envíos nacionales en México, el tiempo estimado es de 3 a 5 días hábiles. Para envíos internacionales, puede ser de 7 a 15 días hábiles. Te proporcionaremos un número de seguimiento para que puedas monitorear tu paquete.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">¿Puedo elegir los dulces de mi caja?</button>
+                        <div class="accordion-content">
+                            <p>¡Claro! En nuestra sección "Personaliza tu Caja", puedes seleccionar tus dulces y botanas mexicanas favoritas para crear una caja a tu medida. Solo asegúrate de cumplir con el mínimo de ítems requeridos.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">¿Qué pasa si un dulce llega dañado?</button>
+                        <div class="accordion-content">
+                            <p>Nos esforzamos por empacar cada caja con el mayor cuidado. Si tu pedido llega dañado, por favor contáctanos en las primeras 24 horas tras la recepción con fotografías del daño, y con gusto te ayudaremos a encontrar una solución.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contacto" class="content-section">
+        <section id="contact" class="content-section">
             <div class="container">
                 <h2>Contáctanos</h2>
-                <p>Envíanos un mensaje con tus dudas o comentarios.</p>
-                <form class="contact-form" action="https://formspree.io/f/mldljnql" method="POST">
+                <p class="subtitle">¿Tienes preguntas o comentarios? ¡Nos encantaría escucharte!</p>
+                <form class="contact-form">
                     <div class="form-group">
                         <label for="name">Nombre:</label>
                         <input type="text" id="name" name="name" required>
@@ -251,10 +308,6 @@
                     <div class="form-group">
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Asunto:</label>
-                        <input type="text" id="subject" name="subject">
                     </div>
                     <div class="form-group">
                         <label for="message">Mensaje:</label>
@@ -268,7 +321,33 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 MexiTreatCo. Todos los derechos reservados.</p>
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h3>MexiTreatCo</h3>
+                    <p>Trayendo el sabor auténtico de México a tu hogar.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#about">Nosotros</a></li>
+                        <li><a href="#products">Productos</a></li>
+                        <li><a href="#customize-box">Personaliza</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#" target="_blank" aria-label="Facebook"><img src="img/facebook-icon.png" alt="Facebook"></a>
+                        <a href="#" target="_blank" aria-label="Instagram"><img src="img/instagram-icon.png" alt="Instagram"></a>
+                        <a href="#" target="_blank" aria-label="Twitter"><img src="img/twitter-icon.png" alt="Twitter"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MexiTreatCo. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
 
